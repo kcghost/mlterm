@@ -341,6 +341,7 @@ int ui_display_fd(ui_display_t *disp) { return XConnectionNumber(disp->display);
 int ui_display_show_root(ui_display_t *disp, ui_window_t *root, int x, int y, int hint,
                          char *app_name, char *wm_role, Window parent_window) {
   void *p;
+  XWindowAttributes attr;
 
   if ((p = realloc(disp->roots, sizeof(ui_window_t *) * (disp->num_roots + 1))) == NULL) {
 #ifdef DEBUG
@@ -381,6 +382,11 @@ int ui_display_show_root(ui_display_t *disp, ui_window_t *root, int x, int y, in
   disp->roots[disp->num_roots++] = root;
 
   ui_window_show(root, hint);
+  // immediate resize if parent affects size
+  if (parent_window) {
+    XGetWindowAttributes(disp->display, root->my_window, &attr);
+    ui_window_resize(root, attr.width, attr.height, NOTIFY_TO_MYSELF);
+  }
 
   return 1;
 }

@@ -1364,7 +1364,8 @@ int ui_window_show(ui_window_t *win, int hint) {
   }
 
   /* Don't use win->parent here in case mlterm works as libvte. */
-  if (PARENT_WINDOWID_IS_TOP(win)) {
+  //if (PARENT_WINDOWID_IS_TOP(win->parent)) {
+  if (1) {
     /* Root window */
 
     XSizeHints size_hints;
