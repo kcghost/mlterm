@@ -3859,11 +3859,11 @@ static void button_pressed(ui_window_t *win, XButtonEvent *event, int click_num)
     } else {
       enter_backscroll_mode(screen);
       if (event->state & ShiftMask) {
-        bs_scroll_downward(screen, 1, 1);
+        bs_half_page_downward(screen);
       } else if (event->state & ControlMask) {
         bs_page_downward(screen);
       } else {
-        bs_half_page_downward(screen);
+        bs_scroll_downward(screen, 1, 1);
       }
     }
   } else if (event->button == Button5) {
@@ -3877,11 +3877,11 @@ static void button_pressed(ui_window_t *win, XButtonEvent *event, int click_num)
     } else {
       enter_backscroll_mode(screen);
       if (event->state & ShiftMask) {
-        bs_scroll_upward(screen, 1, 1);
+        bs_half_page_upward(screen);
       } else if (event->state & ControlMask) {
         bs_page_upward(screen);
       } else {
-        bs_half_page_upward(screen);
+        bs_scroll_upward(screen, 1, 1);
       }
     }
   } else if (event->button < Button3) {
