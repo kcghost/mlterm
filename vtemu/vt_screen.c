@@ -21,7 +21,7 @@
 
 /* --- static variables --- */
 
-static char *word_separators = " .,:;/|@()[]{}";
+static char *word_separators = " ";
 static int regard_uri_as_word = 0;
 
 /* --- static functions --- */
