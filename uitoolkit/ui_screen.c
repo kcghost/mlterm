@@ -3863,7 +3863,7 @@ static void button_pressed(ui_window_t *win, XButtonEvent *event, int click_num)
       } else if (event->state & ControlMask) {
         bs_page_downward(screen);
       } else {
-        bs_scroll_downward(screen, 1, 1);
+        bs_scroll_downward(screen, 5, 1);
       }
     }
   } else if (event->button == Button5) {
@@ -3881,7 +3881,7 @@ static void button_pressed(ui_window_t *win, XButtonEvent *event, int click_num)
       } else if (event->state & ControlMask) {
         bs_page_upward(screen);
       } else {
-        bs_scroll_upward(screen, 1, 1);
+        bs_scroll_upward(screen, 5, 1);
       }
     }
   } else if (event->button < Button3) {
