@@ -2029,7 +2029,7 @@ static int shortcut_match(ui_screen_t *screen, KeySym ksym, u_int state) {
   }
 
   if (vt_term_is_backscrolling(screen->term)) {
-#if 1
+#if 0
     if (ksym == 'u' || ksym == XK_Prior || ksym == XK_KP_Prior) {
       bs_half_page_downward(screen);
 
