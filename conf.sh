@@ -7,6 +7,7 @@
 --with-type-engines=xcore,xft \
 --with-scrollbars=simple \
 --with-utmp=none \
+--enable-use-tools \
 --disable-image \
 --disable-compact-truecolor \
 --disable-dl-ctl \
@@ -16,7 +17,6 @@
 --disable-fontconfig \
 --enable-otl \
 --disable-ssh2 \
---disable-use-tools \
 --disable-dependency-tracking \
 --disable-silent-rules \
 --disable-dnd \
