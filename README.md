@@ -7,3 +7,12 @@ This is a personal fork of [mlterm](https://github.com/arakiken/mlterm) with the
 * Scroll wheel scrolls by 5 lines at a time (like xterm)
 * Default word separators is just ' '
 * Removed backscroll on arrow keys
+
+## Install
+
+```
+./conf.sh
+make -j$(nproc)
+sudo make install
+```
+
